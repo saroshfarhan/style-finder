@@ -2,10 +2,16 @@
 Configuration settings for the Style Finder application.
 """
 
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
 # Model and API configuration
-LLAMA_MODEL_ID = "meta-llama/llama-3-2-90b-vision-instruct"
-PROJECT_ID = "skills-network"  # Default project ID for lab environment
-REGION = "us-south"
+LLAMA_MODEL_ID = "meta-llama/llama-3-2-11b-vision-instruct"
+PROJECT_ID = os.getenv("PROJECT_ID")
+API_KEY = os.getenv("API_KEY")
+PROJECT_URL = os.getenv("PROJECT_URL")
+REGION = "eu-gb"
 
 # Image processing settings
 IMAGE_SIZE = (224, 224)
